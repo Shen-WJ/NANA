@@ -47,6 +47,7 @@
         img#logo {
             width: 128px;
             background-size: cover;
+            object-fit: cover;
             border-radius: 200px;
             box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
             border: 3px solid #00a0ff;
@@ -101,14 +102,14 @@
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
 <p class="text" style="color: #ed3073;">
-    We fell in love
+    I've been waiting for you for
     <br/>
     <span id="span_dt_dt"></span>
 </p>
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("1/20/2018 00:00:00");//这个日期是可以修改的
+        BirthDay = new Date("11/27/2001 5:20:13");//TODO:这个日期是可以修改的
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -121,7 +122,7 @@
         e_minsold = (e_hrsold - hrsold) * 60;
         minsold = Math.floor((e_hrsold - hrsold) * 60);
         seconds = Math.floor((e_minsold - minsold) * 60);
-        span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+        span_dt_dt.innerHTML = daysold + "days " + hrsold + "hours " + minsold + "min " + seconds + "sec ";
     }
 
     show_date_time();
@@ -132,7 +133,7 @@
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
             //想说的话
-            S.UI.simulate("{{被表白者}}|I'm|许远志|Nice|to|Meet|You|#countdown 3|#time");
+            S.UI.simulate("娜娜|偷偷|告诉你|桥灵|他|要|跟你|表白|#countdown 3|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
